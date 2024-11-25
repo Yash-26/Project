@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detected Emotions</title>
+    <style>
+        /* General styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styling */
+h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+table th {
+    background-color: #007bff;
+    color: #fff;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+table td[colspan="4"] {
+    text-align: center;
+    font-style: italic;
+    color: #777;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    table th, table td {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    table th, table td {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Detected Emotions Database</h1>
+        <table>
+            <thead>
+                <tr>
+                    
+                    <th>Emotions</th>
+                    <th>Detect Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if models %}
+                {% for model in models %}
+                    
+                    <tr>
+                        
+                        <td>{{ model.emotion }}</td>
+                        <td>{{ model.timestamp }}</td>
+                    </tr>
+                    
+                    
+                    
+                {% empty %}
+                <tr>
+                    <td colspan="4">No emotions detected yet.</td>
+                </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="4">No models available.</td>
+                </tr>
+            {% endif %}
+
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
