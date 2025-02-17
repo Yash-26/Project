@@ -10,7 +10,11 @@ urlpatterns = [
     path('emotions/', views.emotions, name='emotions'),
     path('emotion_data_view/', views.emotion_data_view, name='emotion_data_view'),
     
-    path('', views.landingpage, name='landingpage'),
+    path('home/', views.landingpage, name='landingpage'),
+
+    path('register/', views.register, name='register'),
+
+    path('',views.login, name='login'),
    
     
 ]

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindWell</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+     <script type="module" src="../../static/js/vendor/login.js" defer></script>
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('../../static/img/login.png');
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+        .login-box {
+            /* background: rgba(255, 255, 255, 0.9); */
+            background: linear-gradient(to top, #a1c4fd, #c2e9fb);
+            padding: 40px 100px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 0px;
+        }
+        .input-box {
+            margin: 50px 0;
+            width: 300px;
+        }
+        .input-box input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: #ff7eb3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #ff4d94;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <h2>Login</h2>
+            <form>
+                <div class="input-box">
+                    <input type="email" placeholder="Email" id="email" required>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Password" id="password" required>
+                </div>
+                <button id="submit" type="submit">Login</button>
+            </form>
+            <h3>Don't have an account? <a href="/register">Register</a></h3>
+        </div>
+    </div>
+</body>
+</html>

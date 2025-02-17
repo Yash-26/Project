@@ -168,6 +168,12 @@ def landingpage(request):
 def index(request):
     return render(request, 'app/test3.html')
 
+def register(request):
+    return render(request,'app/register.html')
+
+def login(request):
+    return render(request,'app/login.html')
+
 
 
 
